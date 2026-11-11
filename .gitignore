@@ -1,0 +1,32 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.DS_Store
+
+# Python environments
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Generated databases and indexes
+*.db
+*.sqlite
+*.sqlite3
+*.faiss
+
+# IDE and operating system
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
