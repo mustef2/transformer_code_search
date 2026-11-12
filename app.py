@@ -2,7 +2,7 @@ import tempfile
 from pathlib import Path
 import streamlit as st
 from code_search.github import clone_public_github_repo
-from code_search.indexer import build_index
+from code_search.database import PersistentCodeIndex
 from code_search.parser import extract_python_functions
 from code_search.search import search_functions
 from code_search.sources import extract_uploaded_zip
@@ -67,6 +67,10 @@ def get_repository_path():
     with st.spinner("Cloning public GitHub repository..."):
         return clone_public_github_repo(github_url.strip())
 
+st.header("Persistent index")
+st.caption("SQLite stores extracted code and embeddings locally so unchanged files are not re-encoded.")
+database_path = st.text_input("SQLite database path", value="data/code_search.db")
+
 st.header("Search your code")
 query = st.text_input("Describe what the code should do",
                       placeholder="Find a function that validates an email address")
@@ -74,17 +78,19 @@ if st.button("Search code", type="primary", disabled=not bool(query.strip())):
     try:
         repo_path = get_repository_path()
         if repo_path is not None:
-            with st.spinner("Extracting Python functions and methods..."):
-                documents = extract_python_functions(repo_path)
+            with st.spinner("Loading Transformer and updating the persistent index..."):
+                model = load_model()
+                index = PersistentCodeIndex(database_path)
+                documents, embeddings, stats = index.index_repository(repo_path, model)
+            st.success(
+                f"Indexed {stats['indexed_code_units']} code units across {stats['total_files']} Python files. "
+                f"Changed: {stats['changed_files']} · Reused: {stats['reused_files']} · Removed: {stats['removed_files']}."
+            )
             if not documents:
                 st.warning("No Python functions were found.")
             else:
-                st.success(f"Found {len(documents)} searchable code units.")
                 kind_map = {"All": None, "Functions": "function", "Methods": "method",
                             "Async functions": "async_function", "Async methods": "async_method"}
-                with st.spinner("Loading Transformer and encoding code..."):
-                    model = load_model()
-                    embeddings = build_index(documents, model)
                 with st.spinner("Ranking relevant code..."):
                     results = search_functions(
                         query, documents, embeddings, model, top_k=result_count,

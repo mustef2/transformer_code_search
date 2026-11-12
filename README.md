@@ -2,7 +2,7 @@
 
 Python application for natural-language search over local Python projects, uploaded ZIP archives, and public GitHub repositories.
 
-## Phase 2 features
+## Features
 
 - Hybrid ranking combines Transformer semantic similarity and BM25-style lexical relevance.
 - Search weight slider controls the semantic/lexical balance.
@@ -75,5 +75,24 @@ Prepare natural-language queries with known relevant functions. Compare BM25-onl
 - Public GitHub repositories only.
 - `all-MiniLM-L6-v2` is a general-purpose sentence embedding model, not a code-specialized retrieval model.
 - Similarity scores are ranking signals, not calibrated probabilities.
-- Embeddings are rebuilt for each search; persistent and incremental indexing are future improvements.
+- The default SQLite database is stored at `data/code_search.db`; it is local to the machine running Streamlit.
 - Avoid uploading confidential source code to untrusted deployments.
+
+## Phase 3: persistent indexing
+
+- SQLite stores extracted code-unit metadata and normalized float32 embeddings.
+- A SHA-256 hash is calculated for each Python file.
+- New and changed files are parsed and embedded; unchanged files reuse stored vectors.
+- Removed files are deleted from the repository index.
+- The database can be reused after restarting Streamlit.
+- The database is local and is excluded from Git by `.gitignore`.
+
+The default database path is `data/code_search.db`. You can change it in the Streamlit interface. Keep the database path stable to reuse the same index. Different repository folders are stored as separate indexes.
+
+To rebuild a repository index, delete its repository entry using the `PersistentCodeIndex.clear_repository(repository_path)` method, then search it again. Back up the database before deleting or replacing it.
+
+### Phase 3 storage design
+
+- `repositories`: one record per indexed repository folder.
+- `indexed_files`: file path and SHA-256 content hash.
+- `code_units`: extracted function/method JSON and its NumPy float32 embedding bytes.
