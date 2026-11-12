@@ -36,3 +36,58 @@ def test_filters_by_path_and_type():
                                file_filter="billing/*.py", symbol_type="function")
     assert len(results) == 1
     assert results[0]["document"]["file_path"] == "billing/tax.py"
+
+
+def test_semantic_only_ranking():
+    docs = documents()
+    vectors = np.array([
+        [1.0, 0.0],
+        [0.0, 1.0]
+    ])
+
+    results = search_functions(
+        "email validation",
+        docs,
+        vectors,
+        FakeModel(),
+        search_mode="semantic"
+    )
+
+    assert results[0]["document"]["qualified_name"] == "validate_email"
+
+
+def test_lexical_only_ranking():
+    docs = documents()
+    vectors = np.array([
+        [1.0, 0.0],
+        [0.0, 1.0]
+    ])
+
+    results = search_functions(
+        "calculate tax",
+        docs,
+        vectors,
+        FakeModel(),
+        search_mode="lexical"
+    )
+
+    assert results[0]["document"]["qualified_name"] == "calculate_tax"
+
+
+def test_invalid_search_mode():
+    import pytest
+
+    docs = documents()
+    vectors = np.array([
+        [1.0, 0.0],
+        [0.0, 1.0]
+    ])
+
+    with pytest.raises(ValueError):
+        search_functions(
+            "email",
+            docs,
+            vectors,
+            FakeModel(),
+            search_mode="invalid"
+        )

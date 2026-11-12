@@ -1,0 +1,78 @@
+
+{
+  "queries": [
+    {
+      "query": "Extract Python functions, asynchronous functions, and class methods from source files",
+      "relevant_ids": [
+        "code_search/parser.py::extract_python_functions",
+        "code_search/parser.py::add_function",
+        "code_search/parser.py::Visitor.visit_FunctionDef",
+        "code_search/parser.py::Visitor.visit_AsyncFunctionDef",
+        "code_search/parser.py::Visitor.visit_ClassDef"
+      ]
+    },
+    {
+      "query": "Search code using semantic similarity, lexical matching, and hybrid ranking",
+      "relevant_ids": [
+        "code_search/search.py::search_functions",
+        "code_search/search.py::bm25_scores",
+        "code_search/search.py::tokenize"
+      ]
+    },
+    {
+      "query": "Split camelCase and snake_case identifiers into searchable words",
+      "relevant_ids": [
+        "code_search/search.py::tokenize"
+      ]
+    },
+    {
+      "query": "Build normalized Transformer embeddings for extracted code units",
+      "relevant_ids": [
+        "code_search/indexer.py::build_index",
+        "code_search/search.py::search_functions"
+      ]
+    },
+    {
+      "query": "Persist code embeddings and reuse unchanged files when indexing a repository",
+      "relevant_ids": [
+        "code_search/database.py::PersistentCodeIndex.index_repository",
+        "code_search/database.py::PersistentCodeIndex._file_hash",
+        "code_search/database.py::PersistentCodeIndex._initialize"
+      ]
+    },
+    {
+      "query": "Clone a public GitHub repository using an HTTPS URL",
+      "relevant_ids": [
+        "code_search/github.py::clone_public_github_repo"
+      ]
+    },
+    {
+      "query": "Safely extract an uploaded ZIP archive while preventing path traversal",
+      "relevant_ids": [
+        "code_search/sources.py::extract_uploaded_zip"
+      ]
+    },
+    {
+      "query": "Calculate precision at K and recall at K for search results",
+      "relevant_ids": [
+        "code_search/evaluation.py::precision_at_k",
+        "code_search/evaluation.py::recall_at_k"
+      ]
+    },
+    {
+      "query": "Calculate reciprocal rank and mean reciprocal rank across search queries",
+      "relevant_ids": [
+        "code_search/evaluation.py::reciprocal_rank",
+        "code_search/evaluation.py::mean_reciprocal_rank"
+      ]
+    },
+    {
+      "query": "Evaluate semantic, lexical, and hybrid search and export CSV and JSON reports",
+      "relevant_ids": [
+        "run_evaluation.py::run_evaluation",
+        "run_evaluation.py::save_reports",
+        "run_evaluation.py::load_benchmark"
+      ]
+    }
+  ]
+}
