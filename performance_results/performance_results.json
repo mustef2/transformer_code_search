@@ -1,8 +1,8 @@
 {
     "benchmark_configuration": {
         "query_count": 10,
-        "repeats_per_query": 10,
-        "warmup_runs_per_query": 1,
+        "repeats_per_query": 20,
+        "warmup_runs_per_query": 3,
         "top_k": 5,
         "total_strategies": 7
     },
@@ -11,93 +11,93 @@
             "mode": "semantic",
             "semantic_weight": 1.0,
             "lexical_weight": 0.0,
-            "average_ms": 24.262062963098288,
-            "median_ms": 23.756750393658876,
-            "minimum_ms": 21.100400015711784,
-            "maximum_ms": 30.86259961128235,
-            "standard_deviation_ms": 1.9655459796191816,
-            "total_measurements": 100,
-            "total_time_ms": 2426.2062963098288,
+            "average_ms": 34.212348982691765,
+            "median_ms": 33.77120057120919,
+            "minimum_ms": 28.525100089609623,
+            "maximum_ms": 59.282099828124046,
+            "standard_deviation_ms": 3.2182731551201997,
+            "total_measurements": 200,
+            "total_time_ms": 6842.469796538353,
             "queries": [
                 {
                     "query": "Extract Python functions, asynchronous functions, and class methods from source files",
-                    "average_ms": 25.025060027837753,
-                    "median_ms": 24.224750231951475,
-                    "minimum_ms": 23.28209951519966,
-                    "maximum_ms": 27.900400571525097,
-                    "standard_deviation_ms": 1.8336036887387668
+                    "average_ms": 35.112980008125305,
+                    "median_ms": 34.760200418531895,
+                    "minimum_ms": 32.32849948108196,
+                    "maximum_ms": 39.86760042607784,
+                    "standard_deviation_ms": 1.7500898509519043
                 },
                 {
                     "query": "Search code using semantic similarity, lexical matching, and hybrid ranking",
-                    "average_ms": 24.991509970277548,
-                    "median_ms": 25.517750065773726,
-                    "minimum_ms": 22.819099947810173,
-                    "maximum_ms": 26.831800118088722,
-                    "standard_deviation_ms": 1.647998145328823
+                    "average_ms": 35.56456994265318,
+                    "median_ms": 34.11380015313625,
+                    "minimum_ms": 30.422700569033623,
+                    "maximum_ms": 59.282099828124046,
+                    "standard_deviation_ms": 5.979671523298403
                 },
                 {
                     "query": "Split camelCase and snake_case identifiers into searchable words",
-                    "average_ms": 24.35989985242486,
-                    "median_ms": 24.380849674344063,
-                    "minimum_ms": 22.408499382436275,
-                    "maximum_ms": 26.698900386691093,
-                    "standard_deviation_ms": 1.6165066264667565
+                    "average_ms": 34.07993000000715,
+                    "median_ms": 33.894349820911884,
+                    "minimum_ms": 28.726600110530853,
+                    "maximum_ms": 39.78640027344227,
+                    "standard_deviation_ms": 2.958304953795493
                 },
                 {
                     "query": "Build normalized Transformer embeddings for extracted code units",
-                    "average_ms": 24.732910003513098,
-                    "median_ms": 24.36009980738163,
-                    "minimum_ms": 22.063100710511208,
-                    "maximum_ms": 27.873899787664413,
-                    "standard_deviation_ms": 1.9509747090606187
+                    "average_ms": 33.344379952177405,
+                    "median_ms": 33.39535044506192,
+                    "minimum_ms": 28.80129963159561,
+                    "maximum_ms": 36.20560001581907,
+                    "standard_deviation_ms": 1.5988318209322547
                 },
                 {
                     "query": "Persist code embeddings and reuse unchanged files when indexing a repository",
-                    "average_ms": 24.356679804623127,
-                    "median_ms": 23.827750235795975,
-                    "minimum_ms": 21.72309998422861,
-                    "maximum_ms": 30.86259961128235,
-                    "standard_deviation_ms": 2.7327923319152627
+                    "average_ms": 34.42374006845057,
+                    "median_ms": 34.22120027244091,
+                    "minimum_ms": 32.6086999848485,
+                    "maximum_ms": 41.32639989256859,
+                    "standard_deviation_ms": 1.9387808380728284
                 },
                 {
                     "query": "Clone a public GitHub repository using an HTTPS URL",
-                    "average_ms": 23.199650086462498,
-                    "median_ms": 22.733749821782112,
-                    "minimum_ms": 22.003300487995148,
-                    "maximum_ms": 25.848500430583954,
-                    "standard_deviation_ms": 1.2972168214169755
+                    "average_ms": 33.26678490266204,
+                    "median_ms": 33.35489984601736,
+                    "minimum_ms": 30.219399370253086,
+                    "maximum_ms": 35.72990000247955,
+                    "standard_deviation_ms": 1.1742013831406792
                 },
                 {
                     "query": "Safely extract an uploaded ZIP archive while preventing path traversal",
-                    "average_ms": 23.933619912713766,
-                    "median_ms": 23.25544971972704,
-                    "minimum_ms": 21.534500643610954,
-                    "maximum_ms": 28.21859996765852,
-                    "standard_deviation_ms": 2.558762453152226
+                    "average_ms": 32.90658504702151,
+                    "median_ms": 32.94340008869767,
+                    "minimum_ms": 28.525100089609623,
+                    "maximum_ms": 35.23729927837849,
+                    "standard_deviation_ms": 1.5079211670189727
                 },
                 {
                     "query": "Calculate precision at K and recall at K for search results",
-                    "average_ms": 23.857969883829355,
-                    "median_ms": 24.458100087940693,
-                    "minimum_ms": 21.482499316334724,
-                    "maximum_ms": 25.608399882912636,
-                    "standard_deviation_ms": 1.554381681077261
+                    "average_ms": 35.291535034775734,
+                    "median_ms": 33.648000098764896,
+                    "minimum_ms": 30.829300172626972,
+                    "maximum_ms": 58.51329956203699,
+                    "standard_deviation_ms": 6.021732658518218
                 },
                 {
                     "query": "Calculate reciprocal rank and mean reciprocal rank across search queries",
-                    "average_ms": 23.922260012477636,
-                    "median_ms": 22.828299552202225,
-                    "minimum_ms": 21.100400015711784,
-                    "maximum_ms": 28.076699934899807,
-                    "standard_deviation_ms": 2.5012286773119303
+                    "average_ms": 33.147844951599836,
+                    "median_ms": 33.16425019875169,
+                    "minimum_ms": 30.10029997676611,
+                    "maximum_ms": 37.56750002503395,
+                    "standard_deviation_ms": 1.5476165614915744
                 },
                 {
                     "query": "Evaluate semantic, lexical, and hybrid search and export CSV and JSON reports",
-                    "average_ms": 24.241070076823235,
-                    "median_ms": 23.729450069367886,
-                    "minimum_ms": 22.181999869644642,
-                    "maximum_ms": 26.957000605762005,
-                    "standard_deviation_ms": 1.5620674432723662
+                    "average_ms": 34.98513991944492,
+                    "median_ms": 34.81824975460768,
+                    "minimum_ms": 32.100699841976166,
+                    "maximum_ms": 38.50780054926872,
+                    "standard_deviation_ms": 1.692211935430734
                 }
             ]
         },
@@ -105,93 +105,93 @@
             "mode": "lexical",
             "semantic_weight": 0.0,
             "lexical_weight": 1.0,
-            "average_ms": 25.314970072358847,
-            "median_ms": 24.900750257074833,
-            "minimum_ms": 21.620499901473522,
-            "maximum_ms": 32.6921995729208,
-            "standard_deviation_ms": 2.2786237727825758,
-            "total_measurements": 100,
-            "total_time_ms": 2531.4970072358847,
+            "average_ms": 28.94913950935006,
+            "median_ms": 29.056299943476915,
+            "minimum_ms": 23.62390048801899,
+            "maximum_ms": 33.53879973292351,
+            "standard_deviation_ms": 1.476199365468759,
+            "total_measurements": 200,
+            "total_time_ms": 5789.827901870012,
             "queries": [
                 {
                     "query": "Extract Python functions, asynchronous functions, and class methods from source files",
-                    "average_ms": 25.479620043188334,
-                    "median_ms": 24.873950518667698,
-                    "minimum_ms": 22.83609937876463,
-                    "maximum_ms": 30.601599253714085,
-                    "standard_deviation_ms": 2.3362896149516708
+                    "average_ms": 28.93829490058124,
+                    "median_ms": 29.025799594819546,
+                    "minimum_ms": 25.94469953328371,
+                    "maximum_ms": 32.035800628364086,
+                    "standard_deviation_ms": 1.3059494171618204
                 },
                 {
                     "query": "Search code using semantic similarity, lexical matching, and hybrid ranking",
-                    "average_ms": 25.455480255186558,
-                    "median_ms": 25.230050552636385,
-                    "minimum_ms": 23.60010053962469,
-                    "maximum_ms": 27.844300493597984,
-                    "standard_deviation_ms": 1.2696798906638542
+                    "average_ms": 28.828794974833727,
+                    "median_ms": 29.02030013501644,
+                    "minimum_ms": 26.337199844419956,
+                    "maximum_ms": 33.37119985371828,
+                    "standard_deviation_ms": 1.7234179389157234
                 },
                 {
                     "query": "Split camelCase and snake_case identifiers into searchable words",
-                    "average_ms": 25.017710216343403,
-                    "median_ms": 24.59915028885007,
-                    "minimum_ms": 22.428300231695175,
-                    "maximum_ms": 28.85580062866211,
-                    "standard_deviation_ms": 2.022448701660082
+                    "average_ms": 28.96685991436243,
+                    "median_ms": 28.719000052660704,
+                    "minimum_ms": 25.332000106573105,
+                    "maximum_ms": 32.5443996116519,
+                    "standard_deviation_ms": 1.6904495475178074
                 },
                 {
                     "query": "Build normalized Transformer embeddings for extracted code units",
-                    "average_ms": 28.104370087385178,
-                    "median_ms": 28.284650295972824,
-                    "minimum_ms": 23.380699567496777,
-                    "maximum_ms": 32.6921995729208,
-                    "standard_deviation_ms": 3.3906407794534688
+                    "average_ms": 29.026300041005015,
+                    "median_ms": 29.141549952328205,
+                    "minimum_ms": 24.40059930086136,
+                    "maximum_ms": 33.09889975935221,
+                    "standard_deviation_ms": 1.9749403185842271
                 },
                 {
                     "query": "Persist code embeddings and reuse unchanged files when indexing a repository",
-                    "average_ms": 25.585189927369356,
-                    "median_ms": 26.029800064861774,
-                    "minimum_ms": 22.473599761724472,
-                    "maximum_ms": 29.174200259149075,
-                    "standard_deviation_ms": 2.471371408117052
+                    "average_ms": 29.02378998696804,
+                    "median_ms": 29.35305004939437,
+                    "minimum_ms": 26.03510022163391,
+                    "maximum_ms": 33.249800093472004,
+                    "standard_deviation_ms": 1.5848394654573126
                 },
                 {
                     "query": "Clone a public GitHub repository using an HTTPS URL",
-                    "average_ms": 25.167530123144388,
-                    "median_ms": 25.269550271332264,
-                    "minimum_ms": 23.317200131714344,
-                    "maximum_ms": 26.874800212681293,
-                    "standard_deviation_ms": 1.3537806570458342
+                    "average_ms": 28.42720514163375,
+                    "median_ms": 28.7155001424253,
+                    "minimum_ms": 23.62390048801899,
+                    "maximum_ms": 30.627300031483173,
+                    "standard_deviation_ms": 1.5353017377420672
                 },
                 {
                     "query": "Safely extract an uploaded ZIP archive while preventing path traversal",
-                    "average_ms": 23.85115036740899,
-                    "median_ms": 23.444950580596924,
-                    "minimum_ms": 21.620499901473522,
-                    "maximum_ms": 28.23130041360855,
-                    "standard_deviation_ms": 2.199198276246618
+                    "average_ms": 28.645075066015124,
+                    "median_ms": 28.859300073236227,
+                    "minimum_ms": 24.525299668312073,
+                    "maximum_ms": 31.18589986115694,
+                    "standard_deviation_ms": 1.4855294370114822
                 },
                 {
                     "query": "Calculate precision at K and recall at K for search results",
-                    "average_ms": 24.77337997406721,
-                    "median_ms": 24.507499765604734,
-                    "minimum_ms": 22.67570048570633,
-                    "maximum_ms": 26.60129964351654,
-                    "standard_deviation_ms": 1.44138150944842
+                    "average_ms": 29.29753507487476,
+                    "median_ms": 29.15754960849881,
+                    "minimum_ms": 25.93260072171688,
+                    "maximum_ms": 33.53879973292351,
+                    "standard_deviation_ms": 1.4296617258510036
                 },
                 {
                     "query": "Calculate reciprocal rank and mean reciprocal rank across search queries",
-                    "average_ms": 24.900479894131422,
-                    "median_ms": 24.816300254315138,
-                    "minimum_ms": 22.024699486792088,
-                    "maximum_ms": 27.206099592149258,
-                    "standard_deviation_ms": 1.6976603618099
+                    "average_ms": 29.073505010455847,
+                    "median_ms": 29.017750173807144,
+                    "minimum_ms": 26.580200530588627,
+                    "maximum_ms": 30.583499930799007,
+                    "standard_deviation_ms": 0.9224715931267176
                 },
                 {
                     "query": "Evaluate semantic, lexical, and hybrid search and export CSV and JSON reports",
-                    "average_ms": 24.814789835363626,
-                    "median_ms": 24.144399911165237,
-                    "minimum_ms": 22.04479929059744,
-                    "maximum_ms": 27.89099980145693,
-                    "standard_deviation_ms": 2.1548471065646
+                    "average_ms": 29.26403498277068,
+                    "median_ms": 29.191849753260612,
+                    "minimum_ms": 27.692199684679508,
+                    "maximum_ms": 31.777700409293175,
+                    "standard_deviation_ms": 0.8713862091497563
                 }
             ]
         },
@@ -199,93 +199,93 @@
             "mode": "hybrid",
             "semantic_weight": 0.9,
             "lexical_weight": 0.1,
-            "average_ms": 24.536330020055175,
-            "median_ms": 23.82980054244399,
-            "minimum_ms": 21.75300009548664,
-            "maximum_ms": 29.122100211679935,
-            "standard_deviation_ms": 1.8163456491335062,
-            "total_measurements": 100,
-            "total_time_ms": 2453.6330020055175,
+            "average_ms": 50.21695049945265,
+            "median_ms": 49.82104990631342,
+            "minimum_ms": 43.85059978812933,
+            "maximum_ms": 91.4070000872016,
+            "standard_deviation_ms": 3.886050871559894,
+            "total_measurements": 200,
+            "total_time_ms": 10043.39009989053,
             "queries": [
                 {
                     "query": "Extract Python functions, asynchronous functions, and class methods from source files",
-                    "average_ms": 24.015730060636997,
-                    "median_ms": 23.67695001885295,
-                    "minimum_ms": 22.327300161123276,
-                    "maximum_ms": 26.071500033140182,
-                    "standard_deviation_ms": 1.1474180733561488
+                    "average_ms": 50.67720003426075,
+                    "median_ms": 50.83289975300431,
+                    "minimum_ms": 43.97380072623491,
+                    "maximum_ms": 58.89299977570772,
+                    "standard_deviation_ms": 3.1940035079283327
                 },
                 {
                     "query": "Search code using semantic similarity, lexical matching, and hybrid ranking",
-                    "average_ms": 25.007060263305902,
-                    "median_ms": 24.700400419533253,
-                    "minimum_ms": 22.77280017733574,
-                    "maximum_ms": 28.283600695431232,
-                    "standard_deviation_ms": 1.8144983146306572
+                    "average_ms": 50.242064939811826,
+                    "median_ms": 50.02189986407757,
+                    "minimum_ms": 45.568800531327724,
+                    "maximum_ms": 60.08219998329878,
+                    "standard_deviation_ms": 3.3570355425077874
                 },
                 {
                     "query": "Split camelCase and snake_case identifiers into searchable words",
-                    "average_ms": 25.23523010313511,
-                    "median_ms": 25.46200016513467,
-                    "minimum_ms": 22.260400466620922,
-                    "maximum_ms": 29.122100211679935,
-                    "standard_deviation_ms": 2.0546465724569827
+                    "average_ms": 50.28318017721176,
+                    "median_ms": 49.46730053052306,
+                    "minimum_ms": 47.05160018056631,
+                    "maximum_ms": 59.12380013614893,
+                    "standard_deviation_ms": 2.797367940749313
                 },
                 {
                     "query": "Build normalized Transformer embeddings for extracted code units",
-                    "average_ms": 25.17798999324441,
-                    "median_ms": 24.549050256609917,
-                    "minimum_ms": 22.49090000987053,
-                    "maximum_ms": 28.549199923872948,
-                    "standard_deviation_ms": 2.047549565313399
+                    "average_ms": 52.01326007954776,
+                    "median_ms": 50.016900058835745,
+                    "minimum_ms": 45.747400261461735,
+                    "maximum_ms": 91.4070000872016,
+                    "standard_deviation_ms": 9.587636732187974
                 },
                 {
                     "query": "Persist code embeddings and reuse unchanged files when indexing a repository",
-                    "average_ms": 24.15514001622796,
-                    "median_ms": 23.430999368429184,
-                    "minimum_ms": 22.296300157904625,
-                    "maximum_ms": 27.442400343716145,
-                    "standard_deviation_ms": 1.8574761604430174
+                    "average_ms": 49.98562498949468,
+                    "median_ms": 50.12969998642802,
+                    "minimum_ms": 47.40490019321442,
+                    "maximum_ms": 52.38820053637028,
+                    "standard_deviation_ms": 1.3707824005892522
                 },
                 {
                     "query": "Clone a public GitHub repository using an HTTPS URL",
-                    "average_ms": 24.15431998670101,
-                    "median_ms": 23.892599623650312,
-                    "minimum_ms": 21.75300009548664,
-                    "maximum_ms": 26.747899129986763,
-                    "standard_deviation_ms": 1.7899587535653652
+                    "average_ms": 49.473589891567826,
+                    "median_ms": 49.6723004616797,
+                    "minimum_ms": 43.85059978812933,
+                    "maximum_ms": 54.2538994923234,
+                    "standard_deviation_ms": 1.973321302631123
                 },
                 {
                     "query": "Safely extract an uploaded ZIP archive while preventing path traversal",
-                    "average_ms": 26.581269782036543,
-                    "median_ms": 27.15259976685047,
-                    "minimum_ms": 22.740899585187435,
-                    "maximum_ms": 28.755299746990204,
-                    "standard_deviation_ms": 1.8603663991700634
+                    "average_ms": 49.31135498918593,
+                    "median_ms": 49.386899918317795,
+                    "minimum_ms": 45.4738000407815,
+                    "maximum_ms": 52.511599846184254,
+                    "standard_deviation_ms": 1.5440883736146238
                 },
                 {
                     "query": "Calculate precision at K and recall at K for search results",
-                    "average_ms": 23.71664997190237,
-                    "median_ms": 23.078850470483303,
-                    "minimum_ms": 22.44849968701601,
-                    "maximum_ms": 26.866399683058262,
-                    "standard_deviation_ms": 1.4184577116421746
+                    "average_ms": 49.991204869002104,
+                    "median_ms": 49.7228498570621,
+                    "minimum_ms": 46.155800111591816,
+                    "maximum_ms": 60.42269989848137,
+                    "standard_deviation_ms": 2.945714199980818
                 },
                 {
                     "query": "Calculate reciprocal rank and mean reciprocal rank across search queries",
-                    "average_ms": 23.617759998887777,
-                    "median_ms": 22.94489974156022,
-                    "minimum_ms": 22.504600696265697,
-                    "maximum_ms": 26.412799954414368,
-                    "standard_deviation_ms": 1.3980217316866803
+                    "average_ms": 48.97213000804186,
+                    "median_ms": 48.87389997020364,
+                    "minimum_ms": 43.940700590610504,
+                    "maximum_ms": 52.011399529874325,
+                    "standard_deviation_ms": 1.984144192722967
                 },
                 {
                     "query": "Evaluate semantic, lexical, and hybrid search and export CSV and JSON reports",
-                    "average_ms": 23.702150024473667,
-                    "median_ms": 23.626799695193768,
-                    "minimum_ms": 22.826600819826126,
-                    "maximum_ms": 24.399599991738796,
-                    "standard_deviation_ms": 0.4591336589349631
+                    "average_ms": 51.219895016402006,
+                    "median_ms": 51.12924985587597,
+                    "minimum_ms": 45.560999773442745,
+                    "maximum_ms": 57.88770038634539,
+                    "standard_deviation_ms": 2.88215302572573
                 }
             ]
         },
@@ -293,93 +293,93 @@
             "mode": "hybrid",
             "semantic_weight": 0.85,
             "lexical_weight": 0.15,
-            "average_ms": 25.78280597925186,
-            "median_ms": 24.366300087422132,
-            "minimum_ms": 21.377000026404858,
-            "maximum_ms": 82.61509984731674,
-            "standard_deviation_ms": 6.2917744498174635,
-            "total_measurements": 100,
-            "total_time_ms": 2578.280597925186,
+            "average_ms": 50.17732451669872,
+            "median_ms": 49.98075030744076,
+            "minimum_ms": 43.15540008246899,
+            "maximum_ms": 61.89960055053234,
+            "standard_deviation_ms": 2.529828163481203,
+            "total_measurements": 200,
+            "total_time_ms": 10035.464903339744,
             "queries": [
                 {
                     "query": "Extract Python functions, asynchronous functions, and class methods from source files",
-                    "average_ms": 32.35194981098175,
-                    "median_ms": 26.852049864828587,
-                    "minimum_ms": 24.170000106096268,
-                    "maximum_ms": 82.61509984731674,
-                    "standard_deviation_ms": 17.738907691546206
+                    "average_ms": 50.26437505148351,
+                    "median_ms": 50.2210995182395,
+                    "minimum_ms": 45.71240022778511,
+                    "maximum_ms": 61.89960055053234,
+                    "standard_deviation_ms": 3.422674376418565
                 },
                 {
                     "query": "Search code using semantic similarity, lexical matching, and hybrid ranking",
-                    "average_ms": 27.754670102149248,
-                    "median_ms": 29.13490030914545,
-                    "minimum_ms": 22.411400452256203,
-                    "maximum_ms": 34.51600018888712,
-                    "standard_deviation_ms": 4.212361412665124
+                    "average_ms": 50.64558978192508,
+                    "median_ms": 50.8928494527936,
+                    "minimum_ms": 47.27999959141016,
+                    "maximum_ms": 52.490899339318275,
+                    "standard_deviation_ms": 1.2412921359861997
                 },
                 {
                     "query": "Split camelCase and snake_case identifiers into searchable words",
-                    "average_ms": 25.580820068717003,
-                    "median_ms": 24.24179995432496,
-                    "minimum_ms": 21.780099719762802,
-                    "maximum_ms": 34.84540060162544,
-                    "standard_deviation_ms": 3.806856553630839
+                    "average_ms": 50.033265026286244,
+                    "median_ms": 49.719900358468294,
+                    "minimum_ms": 43.15540008246899,
+                    "maximum_ms": 58.36030002683401,
+                    "standard_deviation_ms": 3.394668101854034
                 },
                 {
                     "query": "Build normalized Transformer embeddings for extracted code units",
-                    "average_ms": 24.61535995826125,
-                    "median_ms": 24.371849838644266,
-                    "minimum_ms": 21.932000294327736,
-                    "maximum_ms": 26.741099543869495,
-                    "standard_deviation_ms": 1.5733894356932774
+                    "average_ms": 50.006905011832714,
+                    "median_ms": 50.09535001590848,
+                    "minimum_ms": 46.50869965553284,
+                    "maximum_ms": 54.73640002310276,
+                    "standard_deviation_ms": 2.0886705492583815
                 },
                 {
                     "query": "Persist code embeddings and reuse unchanged files when indexing a repository",
-                    "average_ms": 24.31620992720127,
-                    "median_ms": 24.165899958461523,
-                    "minimum_ms": 22.207699716091156,
-                    "maximum_ms": 26.748900301754475,
-                    "standard_deviation_ms": 1.4495698935221606
+                    "average_ms": 50.5062700714916,
+                    "median_ms": 50.555150490254164,
+                    "minimum_ms": 46.81500047445297,
+                    "maximum_ms": 53.359100595116615,
+                    "standard_deviation_ms": 1.9297307997145268
                 },
                 {
                     "query": "Clone a public GitHub repository using an HTTPS URL",
-                    "average_ms": 24.239000026136637,
-                    "median_ms": 24.065400008112192,
-                    "minimum_ms": 22.737099789083004,
-                    "maximum_ms": 27.660800144076347,
-                    "standard_deviation_ms": 1.4488258407836034
+                    "average_ms": 50.65777013078332,
+                    "median_ms": 50.427299458533525,
+                    "minimum_ms": 47.76300024241209,
+                    "maximum_ms": 60.73810067027807,
+                    "standard_deviation_ms": 2.9349917874191367
                 },
                 {
                     "query": "Safely extract an uploaded ZIP archive while preventing path traversal",
-                    "average_ms": 25.27422020211816,
-                    "median_ms": 24.646250065416098,
-                    "minimum_ms": 22.948999889194965,
-                    "maximum_ms": 29.719900339841843,
-                    "standard_deviation_ms": 2.276754963899623
+                    "average_ms": 49.511400097981095,
+                    "median_ms": 49.021050333976746,
+                    "minimum_ms": 45.888799242675304,
+                    "maximum_ms": 52.58690007030964,
+                    "standard_deviation_ms": 1.6983539888924035
                 },
                 {
                     "query": "Calculate precision at K and recall at K for search results",
-                    "average_ms": 23.966179974377155,
-                    "median_ms": 23.558749817311764,
-                    "minimum_ms": 21.377000026404858,
-                    "maximum_ms": 27.479699812829494,
-                    "standard_deviation_ms": 2.009400201616266
+                    "average_ms": 49.540675012394786,
+                    "median_ms": 49.51070016250014,
+                    "minimum_ms": 43.455999344587326,
+                    "maximum_ms": 53.18220052868128,
+                    "standard_deviation_ms": 2.170239098919201
                 },
                 {
                     "query": "Calculate reciprocal rank and mean reciprocal rank across search queries",
-                    "average_ms": 24.66355999931693,
-                    "median_ms": 24.342100135982037,
-                    "minimum_ms": 22.866900078952312,
-                    "maximum_ms": 26.73329971730709,
-                    "standard_deviation_ms": 1.2601449656251782
+                    "average_ms": 48.77638011239469,
+                    "median_ms": 49.315900541841984,
+                    "minimum_ms": 44.88270077854395,
+                    "maximum_ms": 52.3117994889617,
+                    "standard_deviation_ms": 1.8385294203229032
                 },
                 {
                     "query": "Evaluate semantic, lexical, and hybrid search and export CSV and JSON reports",
-                    "average_ms": 25.06608972325921,
-                    "median_ms": 24.235500022768974,
-                    "minimum_ms": 22.535099647939205,
-                    "maximum_ms": 29.49369978159666,
-                    "standard_deviation_ms": 2.5054200813967156
+                    "average_ms": 51.83061487041414,
+                    "median_ms": 51.749699749052525,
+                    "minimum_ms": 45.14849931001663,
+                    "maximum_ms": 59.07549988478422,
+                    "standard_deviation_ms": 2.844784279925015
                 }
             ]
         },
@@ -387,93 +387,93 @@
             "mode": "hybrid",
             "semantic_weight": 0.8,
             "lexical_weight": 0.2,
-            "average_ms": 24.52343501150608,
-            "median_ms": 24.22104962170124,
-            "minimum_ms": 21.256799809634686,
-            "maximum_ms": 29.014400206506252,
-            "standard_deviation_ms": 1.9055913208368875,
-            "total_measurements": 100,
-            "total_time_ms": 2452.343501150608,
+            "average_ms": 50.0308185396716,
+            "median_ms": 49.815400037914515,
+            "minimum_ms": 43.41870080679655,
+            "maximum_ms": 66.12819992005825,
+            "standard_deviation_ms": 2.594888062638753,
+            "total_measurements": 200,
+            "total_time_ms": 10006.16370793432,
             "queries": [
                 {
                     "query": "Extract Python functions, asynchronous functions, and class methods from source files",
-                    "average_ms": 23.53998003527522,
-                    "median_ms": 23.62880017608404,
-                    "minimum_ms": 22.176900878548622,
-                    "maximum_ms": 24.771099910140038,
-                    "standard_deviation_ms": 0.9157085507864194
+                    "average_ms": 51.223405078053474,
+                    "median_ms": 50.711000338196754,
+                    "minimum_ms": 47.104000113904476,
+                    "maximum_ms": 60.88010035455227,
+                    "standard_deviation_ms": 2.8362496986942856
                 },
                 {
                     "query": "Search code using semantic similarity, lexical matching, and hybrid ranking",
-                    "average_ms": 23.7384800799191,
-                    "median_ms": 23.916100151836872,
-                    "minimum_ms": 21.384600549936295,
-                    "maximum_ms": 25.062800385057926,
-                    "standard_deviation_ms": 1.1874114685527466
+                    "average_ms": 50.00055506825447,
+                    "median_ms": 50.04270002245903,
+                    "minimum_ms": 44.956499710679054,
+                    "maximum_ms": 55.571299977600574,
+                    "standard_deviation_ms": 2.3799950659565576
                 },
                 {
                     "query": "Split camelCase and snake_case identifiers into searchable words",
-                    "average_ms": 24.24857011064887,
-                    "median_ms": 23.773700464516878,
-                    "minimum_ms": 21.50639984756708,
-                    "maximum_ms": 27.507600374519825,
-                    "standard_deviation_ms": 2.115810952759573
+                    "average_ms": 49.77751509286463,
+                    "median_ms": 48.69760014116764,
+                    "minimum_ms": 44.74200028926134,
+                    "maximum_ms": 57.736000046133995,
+                    "standard_deviation_ms": 3.2803729885976796
                 },
                 {
                     "query": "Build normalized Transformer embeddings for extracted code units",
-                    "average_ms": 25.052160024642944,
-                    "median_ms": 24.468049872666597,
-                    "minimum_ms": 22.491500712931156,
-                    "maximum_ms": 28.150400146842003,
-                    "standard_deviation_ms": 2.0379792810558737
+                    "average_ms": 51.258430164307356,
+                    "median_ms": 50.44930009171367,
+                    "minimum_ms": 46.1090998724103,
+                    "maximum_ms": 66.12819992005825,
+                    "standard_deviation_ms": 3.9755070577587412
                 },
                 {
                     "query": "Persist code embeddings and reuse unchanged files when indexing a repository",
-                    "average_ms": 25.20216004922986,
-                    "median_ms": 24.72310047596693,
-                    "minimum_ms": 22.855499759316444,
-                    "maximum_ms": 28.595900163054466,
-                    "standard_deviation_ms": 1.7218620187466154
+                    "average_ms": 50.420814799144864,
+                    "median_ms": 50.4123498685658,
+                    "minimum_ms": 46.426099725067616,
+                    "maximum_ms": 53.42039931565523,
+                    "standard_deviation_ms": 1.4643232050466055
                 },
                 {
                     "query": "Clone a public GitHub repository using an HTTPS URL",
-                    "average_ms": 24.85933993011713,
-                    "median_ms": 24.527600035071373,
-                    "minimum_ms": 21.256799809634686,
-                    "maximum_ms": 28.25080044567585,
-                    "standard_deviation_ms": 2.256545694028658
+                    "average_ms": 49.4545750785619,
+                    "median_ms": 49.479850102216005,
+                    "minimum_ms": 47.41110000759363,
+                    "maximum_ms": 51.771500147879124,
+                    "standard_deviation_ms": 1.098453822409204
                 },
                 {
                     "query": "Safely extract an uploaded ZIP archive while preventing path traversal",
-                    "average_ms": 24.291939940303564,
-                    "median_ms": 23.872400168329477,
-                    "minimum_ms": 21.801800467073917,
-                    "maximum_ms": 28.30819971859455,
-                    "standard_deviation_ms": 1.9295565149617713
+                    "average_ms": 48.316024988889694,
+                    "median_ms": 48.47469972446561,
+                    "minimum_ms": 43.41870080679655,
+                    "maximum_ms": 51.1651998385787,
+                    "standard_deviation_ms": 2.0255444198844286
                 },
                 {
                     "query": "Calculate precision at K and recall at K for search results",
-                    "average_ms": 24.153459910303354,
-                    "median_ms": 24.021000135689974,
-                    "minimum_ms": 22.603199817240238,
-                    "maximum_ms": 26.482299901545048,
-                    "standard_deviation_ms": 1.1735259116519763
+                    "average_ms": 50.05243504419923,
+                    "median_ms": 49.90844987332821,
+                    "minimum_ms": 45.882100239396095,
+                    "maximum_ms": 55.88020011782646,
+                    "standard_deviation_ms": 2.0690355898904955
                 },
                 {
                     "query": "Calculate reciprocal rank and mean reciprocal rank across search queries",
-                    "average_ms": 24.075360130518675,
-                    "median_ms": 23.242249619215727,
-                    "minimum_ms": 21.967099979519844,
-                    "maximum_ms": 28.19420024752617,
-                    "standard_deviation_ms": 2.317705906994889
+                    "average_ms": 49.22535507939756,
+                    "median_ms": 49.10479998216033,
+                    "minimum_ms": 45.32740078866482,
+                    "maximum_ms": 52.35640052706003,
+                    "standard_deviation_ms": 1.482977885880971
                 },
                 {
                     "query": "Evaluate semantic, lexical, and hybrid search and export CSV and JSON reports",
-                    "average_ms": 26.072899904102087,
-                    "median_ms": 25.65424982458353,
-                    "minimum_ms": 23.390100337564945,
-                    "maximum_ms": 29.014400206506252,
-                    "standard_deviation_ms": 2.1548316707318302
+                    "average_ms": 50.57907500304282,
+                    "median_ms": 50.428499933332205,
+                    "minimum_ms": 45.6508994102478,
+                    "maximum_ms": 56.11240025609732,
+                    "standard_deviation_ms": 2.9256227635751118
                 }
             ]
         },
@@ -481,93 +481,93 @@
             "mode": "hybrid",
             "semantic_weight": 0.75,
             "lexical_weight": 0.25,
-            "average_ms": 25.13711695559323,
-            "median_ms": 25.05525015294552,
-            "minimum_ms": 21.656599827110767,
-            "maximum_ms": 28.748299926519394,
-            "standard_deviation_ms": 1.9489041053650047,
-            "total_measurements": 100,
-            "total_time_ms": 2513.711695559323,
+            "average_ms": 49.8488444974646,
+            "median_ms": 49.465599935501814,
+            "minimum_ms": 44.375499710440636,
+            "maximum_ms": 65.31380023807287,
+            "standard_deviation_ms": 2.5409386918096972,
+            "total_measurements": 200,
+            "total_time_ms": 9969.76889949292,
             "queries": [
                 {
                     "query": "Extract Python functions, asynchronous functions, and class methods from source files",
-                    "average_ms": 24.77954998612404,
-                    "median_ms": 24.748099967837334,
-                    "minimum_ms": 22.22589962184429,
-                    "maximum_ms": 27.617099694907665,
-                    "standard_deviation_ms": 1.692210576188017
+                    "average_ms": 50.3113450948149,
+                    "median_ms": 49.54499984160066,
+                    "minimum_ms": 45.94289977103472,
+                    "maximum_ms": 56.971400044858456,
+                    "standard_deviation_ms": 3.069243828836533
                 },
                 {
                     "query": "Search code using semantic similarity, lexical matching, and hybrid ranking",
-                    "average_ms": 24.49189005419612,
-                    "median_ms": 23.230950348079205,
-                    "minimum_ms": 22.095399908721447,
-                    "maximum_ms": 28.748299926519394,
-                    "standard_deviation_ms": 2.592839507917343
+                    "average_ms": 51.1393500957638,
+                    "median_ms": 49.780700355768204,
+                    "minimum_ms": 48.303999938070774,
+                    "maximum_ms": 65.31380023807287,
+                    "standard_deviation_ms": 4.377989020129733
                 },
                 {
                     "query": "Split camelCase and snake_case identifiers into searchable words",
-                    "average_ms": 24.9774600379169,
-                    "median_ms": 25.05124919116497,
-                    "minimum_ms": 23.27740006148815,
-                    "maximum_ms": 27.19840034842491,
-                    "standard_deviation_ms": 1.3296718898945985
+                    "average_ms": 49.753485061228275,
+                    "median_ms": 48.795550130307674,
+                    "minimum_ms": 46.71540018171072,
+                    "maximum_ms": 58.09729918837547,
+                    "standard_deviation_ms": 2.8059991380485827
                 },
                 {
                     "query": "Build normalized Transformer embeddings for extracted code units",
-                    "average_ms": 25.393879786133766,
-                    "median_ms": 26.021999772638083,
-                    "minimum_ms": 21.905199624598026,
-                    "maximum_ms": 27.389399707317352,
-                    "standard_deviation_ms": 1.789747927716613
+                    "average_ms": 49.954574927687645,
+                    "median_ms": 49.894499592483044,
+                    "minimum_ms": 46.22120037674904,
+                    "maximum_ms": 55.41650019586086,
+                    "standard_deviation_ms": 2.0366811387602124
                 },
                 {
                     "query": "Persist code embeddings and reuse unchanged files when indexing a repository",
-                    "average_ms": 25.35134991630912,
-                    "median_ms": 25.392749812453985,
-                    "minimum_ms": 22.80369959771633,
-                    "maximum_ms": 27.606300078332424,
-                    "standard_deviation_ms": 1.4579971433012104
+                    "average_ms": 50.411449978128076,
+                    "median_ms": 50.44164974242449,
+                    "minimum_ms": 48.09559974819422,
+                    "maximum_ms": 53.604899905622005,
+                    "standard_deviation_ms": 1.568123415867964
                 },
                 {
                     "query": "Clone a public GitHub repository using an HTTPS URL",
-                    "average_ms": 26.242519821971655,
-                    "median_ms": 26.747650001198053,
-                    "minimum_ms": 23.111999966204166,
-                    "maximum_ms": 28.269000351428986,
-                    "standard_deviation_ms": 2.007802026646585
+                    "average_ms": 48.922859970480204,
+                    "median_ms": 48.747900407761335,
+                    "minimum_ms": 44.75490003824234,
+                    "maximum_ms": 52.57609952241182,
+                    "standard_deviation_ms": 1.7772255599240467
                 },
                 {
                     "query": "Safely extract an uploaded ZIP archive while preventing path traversal",
-                    "average_ms": 23.625369928777218,
-                    "median_ms": 23.493650369346142,
-                    "minimum_ms": 21.722199395298958,
-                    "maximum_ms": 26.846599765121937,
-                    "standard_deviation_ms": 1.7404611112822521
+                    "average_ms": 48.50049000233412,
+                    "median_ms": 48.44719963148236,
+                    "minimum_ms": 46.93800024688244,
+                    "maximum_ms": 50.89670047163963,
+                    "standard_deviation_ms": 1.0350219465927897
                 },
                 {
                     "query": "Calculate precision at K and recall at K for search results",
-                    "average_ms": 24.699020106345415,
-                    "median_ms": 24.58510035648942,
-                    "minimum_ms": 22.90230058133602,
-                    "maximum_ms": 27.381399646401405,
-                    "standard_deviation_ms": 1.5878104507951547
+                    "average_ms": 49.84553991816938,
+                    "median_ms": 49.54284988343716,
+                    "minimum_ms": 45.023499988019466,
+                    "maximum_ms": 53.68020012974739,
+                    "standard_deviation_ms": 1.8397797556995397
                 },
                 {
                     "query": "Calculate reciprocal rank and mean reciprocal rank across search queries",
-                    "average_ms": 25.921659916639328,
-                    "median_ms": 26.276899967342615,
-                    "minimum_ms": 23.17530009895563,
-                    "maximum_ms": 28.498699888586998,
-                    "standard_deviation_ms": 1.808054759999683
+                    "average_ms": 48.46558999270201,
+                    "median_ms": 48.74200001358986,
+                    "minimum_ms": 44.375499710440636,
+                    "maximum_ms": 54.76410035043955,
+                    "standard_deviation_ms": 2.193966046681085
                 },
                 {
                     "query": "Evaluate semantic, lexical, and hybrid search and export CSV and JSON reports",
-                    "average_ms": 25.888470001518726,
-                    "median_ms": 26.81430010125041,
-                    "minimum_ms": 21.656599827110767,
-                    "maximum_ms": 28.483199886977673,
-                    "standard_deviation_ms": 2.463298393248584
+                    "average_ms": 51.18375993333757,
+                    "median_ms": 50.7362000644207,
+                    "minimum_ms": 47.66570031642914,
+                    "maximum_ms": 55.66649977117777,
+                    "standard_deviation_ms": 1.7570348923639618
                 }
             ]
         },
@@ -575,93 +575,93 @@
             "mode": "hybrid",
             "semantic_weight": 0.7,
             "lexical_weight": 0.3,
-            "average_ms": 24.93553200736642,
-            "median_ms": 24.258249904960394,
-            "minimum_ms": 21.75530046224594,
-            "maximum_ms": 30.39079997688532,
-            "standard_deviation_ms": 2.1589283990103736,
-            "total_measurements": 100,
-            "total_time_ms": 2493.553200736642,
+            "average_ms": 50.05506849847734,
+            "median_ms": 49.62400021031499,
+            "minimum_ms": 42.94100031256676,
+            "maximum_ms": 68.80469992756844,
+            "standard_deviation_ms": 3.036273146739238,
+            "total_measurements": 200,
+            "total_time_ms": 10011.013699695468,
             "queries": [
                 {
                     "query": "Extract Python functions, asynchronous functions, and class methods from source files",
-                    "average_ms": 27.803209889680147,
-                    "median_ms": 27.8329998254776,
-                    "minimum_ms": 25.14639962464571,
-                    "maximum_ms": 30.19579965621233,
-                    "standard_deviation_ms": 1.4607081399410238
+                    "average_ms": 50.82996990531683,
+                    "median_ms": 50.48904940485954,
+                    "minimum_ms": 48.08070044964552,
+                    "maximum_ms": 54.85699977725744,
+                    "standard_deviation_ms": 1.840336873136772
                 },
                 {
                     "query": "Search code using semantic similarity, lexical matching, and hybrid ranking",
-                    "average_ms": 24.971880111843348,
-                    "median_ms": 24.612400215119123,
-                    "minimum_ms": 22.088699974119663,
-                    "maximum_ms": 30.39079997688532,
-                    "standard_deviation_ms": 2.5890352244376835
+                    "average_ms": 51.666219998151064,
+                    "median_ms": 50.470849964767694,
+                    "minimum_ms": 47.29930032044649,
+                    "maximum_ms": 64.96179942041636,
+                    "standard_deviation_ms": 4.046461172983609
                 },
                 {
                     "query": "Split camelCase and snake_case identifiers into searchable words",
-                    "average_ms": 24.800140038132668,
-                    "median_ms": 24.774249643087387,
-                    "minimum_ms": 21.951700560748577,
-                    "maximum_ms": 28.22250034660101,
-                    "standard_deviation_ms": 1.938160108659269
+                    "average_ms": 50.21425988525152,
+                    "median_ms": 49.416250083595514,
+                    "minimum_ms": 45.638599433004856,
+                    "maximum_ms": 59.078400023281574,
+                    "standard_deviation_ms": 2.7708579123129273
                 },
                 {
                     "query": "Build normalized Transformer embeddings for extracted code units",
-                    "average_ms": 24.995570071041584,
-                    "median_ms": 24.341499898582697,
-                    "minimum_ms": 22.01559953391552,
-                    "maximum_ms": 28.292500413954258,
-                    "standard_deviation_ms": 1.8086119679239687
+                    "average_ms": 49.68092502094805,
+                    "median_ms": 49.67229999601841,
+                    "minimum_ms": 46.46090045571327,
+                    "maximum_ms": 53.269400261342525,
+                    "standard_deviation_ms": 1.6401838350785594
                 },
                 {
                     "query": "Persist code embeddings and reuse unchanged files when indexing a repository",
-                    "average_ms": 23.817600030452013,
-                    "median_ms": 23.6459500156343,
-                    "minimum_ms": 21.987800486385822,
-                    "maximum_ms": 26.38150006532669,
-                    "standard_deviation_ms": 1.3789387951993524
+                    "average_ms": 49.70752005465329,
+                    "median_ms": 50.20805029198527,
+                    "minimum_ms": 42.94100031256676,
+                    "maximum_ms": 52.29309946298599,
+                    "standard_deviation_ms": 2.3314987203427995
                 },
                 {
                     "query": "Clone a public GitHub repository using an HTTPS URL",
-                    "average_ms": 22.967570088803768,
-                    "median_ms": 22.883450146764517,
-                    "minimum_ms": 21.969400346279144,
-                    "maximum_ms": 24.21960048377514,
-                    "standard_deviation_ms": 0.6663527420959703
+                    "average_ms": 49.55742512829602,
+                    "median_ms": 49.52590027824044,
+                    "minimum_ms": 45.073400251567364,
+                    "maximum_ms": 52.78860032558441,
+                    "standard_deviation_ms": 1.6654291414708722
                 },
                 {
                     "query": "Safely extract an uploaded ZIP archive while preventing path traversal",
-                    "average_ms": 23.78836004063487,
-                    "median_ms": 23.67259981110692,
-                    "minimum_ms": 21.75530046224594,
-                    "maximum_ms": 26.810399256646633,
-                    "standard_deviation_ms": 1.376699576492936
+                    "average_ms": 48.00730496644974,
+                    "median_ms": 48.73214988037944,
+                    "minimum_ms": 42.94339939951897,
+                    "maximum_ms": 51.77489947527647,
+                    "standard_deviation_ms": 2.453321282552871
                 },
                 {
                     "query": "Calculate precision at K and recall at K for search results",
-                    "average_ms": 23.990509659051895,
-                    "median_ms": 23.374149575829506,
-                    "minimum_ms": 22.03310001641512,
-                    "maximum_ms": 26.792499236762524,
-                    "standard_deviation_ms": 1.7622719269209137
+                    "average_ms": 50.60743512585759,
+                    "median_ms": 49.48715027421713,
+                    "minimum_ms": 45.29520031064749,
+                    "maximum_ms": 68.80469992756844,
+                    "standard_deviation_ms": 4.569618982041638
                 },
                 {
                     "query": "Calculate reciprocal rank and mean reciprocal rank across search queries",
-                    "average_ms": 25.261070113629103,
-                    "median_ms": 24.927600286900997,
-                    "minimum_ms": 23.11760000884533,
-                    "maximum_ms": 29.041800647974014,
-                    "standard_deviation_ms": 1.6634357835158338
+                    "average_ms": 48.995739966630936,
+                    "median_ms": 48.88384975492954,
+                    "minimum_ms": 45.79010047018528,
+                    "maximum_ms": 51.65320076048374,
+                    "standard_deviation_ms": 1.442885756474407
                 },
                 {
                     "query": "Evaluate semantic, lexical, and hybrid search and export CSV and JSON reports",
-                    "average_ms": 26.959410030394793,
-                    "median_ms": 27.019149623811245,
-                    "minimum_ms": 23.971199989318848,
-                    "maximum_ms": 29.784800484776497,
-                    "standard_deviation_ms": 1.820577727981753
+                    "average_ms": 51.28388493321836,
+                    "median_ms": 50.977050326764584,
+                    "minimum_ms": 45.41349969804287,
+                    "maximum_ms": 64.55729994922876,
+                    "standard_deviation_ms": 4.219471791219121
                 }
             ]
         }

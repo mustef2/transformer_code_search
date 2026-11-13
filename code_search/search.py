@@ -100,7 +100,7 @@ def search_functions(
     symbol_type=None,
     search_mode="hybrid"
 ):
-    """Rank code using semantic, lexical, or hybrid search."""
+    """Rank code using optimized semantic, lexical, or hybrid search."""
 
     if search_mode not in ("semantic", "lexical", "hybrid"):
         raise ValueError(
@@ -116,23 +116,35 @@ def search_functions(
     if not documents:
         return []
 
-    if len(embeddings) != len(documents):
-        raise ValueError(
-            "Embedding count must match the number of code documents."
-        )
+    needs_semantic = search_mode in ("semantic", "hybrid")
+    needs_lexical = search_mode in ("lexical", "hybrid")
 
-    q = model.encode(
-        [query],
-        convert_to_numpy=True,
-        normalize_embeddings=True,
-        show_progress_bar=False
-    )[0]
+    # Calculate semantic scores only when required.
+    if needs_semantic:
+        if embeddings is None or len(embeddings) != len(documents):
+            raise ValueError(
+                "Embedding count must match the number of code documents."
+            )
 
-    cosine = np.asarray(embeddings) @ q
-    semantic = np.clip((cosine + 1) / 2, 0, 1)
+        query_embedding = model.encode(
+            [query],
+            convert_to_numpy=True,
+            normalize_embeddings=True,
+            show_progress_bar=False
+        )[0]
 
-    lexical = bm25_scores(query, documents)
+        cosine = np.asarray(embeddings) @ query_embedding
+        semantic = np.clip((cosine + 1) / 2, 0, 1)
+    else:
+        semantic = np.zeros(len(documents), dtype=float)
 
+    # Calculate lexical scores only when required.
+    if needs_lexical:
+        lexical = bm25_scores(query, documents)
+    else:
+        lexical = np.zeros(len(documents), dtype=float)
+
+    # Determine final ranking scores.
     if search_mode == "semantic":
         combined = semantic
 
@@ -170,7 +182,7 @@ def search_functions(
         matches = sorted(query_terms & code_terms)
         reasons = []
 
-        if semantic[i] >= 0.60:
+        if needs_semantic and semantic[i] >= 0.60:
             reasons.append(
                 "the code is semantically similar to the query"
             )

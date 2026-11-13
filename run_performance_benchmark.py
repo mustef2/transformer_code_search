@@ -17,89 +17,6 @@ from run_evaluation import (
 )
 
 
-def benchmark_strategy(
-    documents,
-    embeddings,
-    model,
-    queries,
-    strategy,
-    repeats,
-    warmup,
-    top_k,
-):
-    """Measure execution time for one search strategy."""
-
-    print(f"\nBenchmarking {strategy['name'].upper()}...")
-
-    all_times = []
-    query_details = []
-
-    for query_item in queries:
-
-        query = query_item["query"]
-
-        search_arguments = {
-            "query": query,
-            "documents": documents,
-            "embeddings": embeddings,
-            "model": model,
-            "top_k": top_k,
-            "semantic_weight": strategy["semantic_weight"],
-            "lexical_weight": strategy["lexical_weight"],
-            "search_mode": strategy["mode"],
-        }
-
-        # Warm-up runs are excluded from measurements.
-        for _ in range(warmup):
-            search_functions(**search_arguments)
-
-        query_times = []
-
-        # Measure repeated searches.
-        for _ in range(repeats):
-
-            start_time = time.perf_counter()
-
-            search_functions(**search_arguments)
-
-            elapsed_ms = (
-                time.perf_counter() - start_time
-            ) * 1000
-
-            query_times.append(elapsed_ms)
-            all_times.append(elapsed_ms)
-
-        query_details.append({
-            "query": query,
-            "average_ms": statistics.mean(query_times),
-            "median_ms": statistics.median(query_times),
-            "minimum_ms": min(query_times),
-            "maximum_ms": max(query_times),
-            "standard_deviation_ms": (
-                statistics.stdev(query_times)
-                if len(query_times) > 1
-                else 0.0
-            ),
-        })
-
-    return {
-        "mode": strategy["mode"],
-        "semantic_weight": strategy["semantic_weight"],
-        "lexical_weight": strategy["lexical_weight"],
-        "average_ms": statistics.mean(all_times),
-        "median_ms": statistics.median(all_times),
-        "minimum_ms": min(all_times),
-        "maximum_ms": max(all_times),
-        "standard_deviation_ms": (
-            statistics.stdev(all_times)
-            if len(all_times) > 1
-            else 0.0
-        ),
-        "total_measurements": len(all_times),
-        "total_time_ms": sum(all_times),
-        "queries": query_details,
-    }
-
 
 def run_benchmark(
     documents,
@@ -110,24 +27,122 @@ def run_benchmark(
     warmup,
     top_k,
 ):
-    """Benchmark all seven search strategies."""
+    """Benchmark strategies using interleaved measurements."""
 
-    results = {}
+    results = {
+        strategy["name"]: {
+            "mode": strategy["mode"],
+            "semantic_weight": strategy["semantic_weight"],
+            "lexical_weight": strategy["lexical_weight"],
+            "all_times": [],
+            "query_times": [],
+        }
+        for strategy in SEARCH_STRATEGIES
+    }
 
-    for strategy in SEARCH_STRATEGIES:
+    print("\nWarming up all search strategies...")
 
-        results[strategy["name"]] = benchmark_strategy(
-            documents=documents,
-            embeddings=embeddings,
-            model=model,
-            queries=queries,
-            strategy=strategy,
-            repeats=repeats,
-            warmup=warmup,
-            top_k=top_k,
+    # Warm up every strategy for every query.
+    for query_item in queries:
+        for strategy in SEARCH_STRATEGIES:
+            search_functions(
+                query=query_item["query"],
+                documents=documents,
+                embeddings=embeddings,
+                model=model,
+                top_k=top_k,
+                semantic_weight=strategy["semantic_weight"],
+                lexical_weight=strategy["lexical_weight"],
+                search_mode=strategy["mode"],
+            )
+
+    print("Warm-up completed.")
+    print("\nRunning interleaved benchmark...")
+
+    for query_index, query_item in enumerate(queries):
+
+        query = query_item["query"]
+
+        query_strategy_times = {
+            strategy["name"]: []
+            for strategy in SEARCH_STRATEGIES
+        }
+
+        # Rotate strategy order between repetitions.
+        for repetition in range(repeats):
+
+            offset = (query_index + repetition) % len(SEARCH_STRATEGIES)
+
+            ordered_strategies = (
+                SEARCH_STRATEGIES[offset:]
+                + SEARCH_STRATEGIES[:offset]
+            )
+
+            for strategy in ordered_strategies:
+
+                start_time = time.perf_counter()
+
+                search_functions(
+                    query=query,
+                    documents=documents,
+                    embeddings=embeddings,
+                    model=model,
+                    top_k=top_k,
+                    semantic_weight=strategy["semantic_weight"],
+                    lexical_weight=strategy["lexical_weight"],
+                    search_mode=strategy["mode"],
+                )
+
+                elapsed_ms = (
+                    time.perf_counter() - start_time
+                ) * 1000
+
+                name = strategy["name"]
+
+                query_strategy_times[name].append(elapsed_ms)
+                results[name]["all_times"].append(elapsed_ms)
+
+        # Save per-query statistics.
+        for strategy in SEARCH_STRATEGIES:
+
+            name = strategy["name"]
+            times = query_strategy_times[name]
+
+            results[name]["query_times"].append({
+                "query": query,
+                "average_ms": statistics.mean(times),
+                "median_ms": statistics.median(times),
+                "minimum_ms": min(times),
+                "maximum_ms": max(times),
+                "standard_deviation_ms": (
+                    statistics.stdev(times)
+                    if len(times) > 1
+                    else 0.0
+                ),
+            })
+
+    # Calculate final summary statistics.
+    for name, data in results.items():
+
+        times = data.pop("all_times")
+
+        data["average_ms"] = statistics.mean(times)
+        data["median_ms"] = statistics.median(times)
+        data["minimum_ms"] = min(times)
+        data["maximum_ms"] = max(times)
+
+        data["standard_deviation_ms"] = (
+            statistics.stdev(times)
+            if len(times) > 1
+            else 0.0
         )
 
+        data["total_measurements"] = len(times)
+        data["total_time_ms"] = sum(times)
+        data["queries"] = data.pop("query_times")
+
     return results
+
 
 
 def print_comparison(results):
