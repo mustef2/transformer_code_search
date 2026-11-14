@@ -77,6 +77,7 @@ The application follows a modular architecture:
 The main project components are organized as follows:
 
 text
+```
 transformer_code_search/
 │
 ├── app.py
@@ -105,7 +106,7 @@ transformer_code_search/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-
+```
 _Note: This is a representation of the main project files. Additional generated files and directories may exist locally._
 
 ## 6. Installation and Setup
